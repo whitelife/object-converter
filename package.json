@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/whitelife/object-converter/issues"
   },
-  "homepage": "https://github.com/whitelife/object-converter#readme"
+  "homepage": "https://github.com/whitelife/object-converter#readme",
+  "dependencies": {}
 }
