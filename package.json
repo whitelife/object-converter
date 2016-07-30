@@ -1,0 +1,22 @@
+{
+  "name": "object-converter",
+  "version": "0.1.0",
+  "description": "javascript object converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitelife/object-converter.git"
+  },
+  "keywords": [
+    "converter"
+  ],
+  "author": "whitelife < parkmc_0@naver.com >",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whitelife/object-converter/issues"
+  },
+  "homepage": "https://github.com/whitelife/object-converter#readme"
+}
