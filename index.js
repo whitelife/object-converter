@@ -11,12 +11,14 @@ const convert = (targetObject, elementCallback) => {
 
                 const value = _targetObject[key];
 
-                if (value.constructor === Object) {
-                    recursive(value);
-                }
+                if (value !== undefined && value !== null) {
+                    if (value.constructor === Object) {
+                        recursive(value);
+                    }
 
-                if (value.constructor === Array) {
-                    recursive(value);
+                    if (value.constructor === Array) {
+                        recursive(value);
+                    }
                 }
 
                 elementCallbacks.push(elementCallback.bind(null, key, value, _targetObject));
@@ -26,13 +28,32 @@ const convert = (targetObject, elementCallback) => {
         if (_targetObject.constructor === Array) {
 
             _targetObject.forEach((item, index, array) => {
-                recursive(item);
+                if (item !== undefined && item !== null) {
+                    recursive(item);
+                }
             });
         }
     }
 
     recursive(targetObject);
     elementCallbacks.map((elementCallback) => elementCallback());
+}
+
+const convertKeys = (targetObject, keymap) => {
+
+    convert(targetObject, (key, value, target) => {
+
+        console.log(key, value);
+
+        const convertKey = keymap[key] || key;
+
+        if (convertKey !== key) {
+            target[convertKey] = value;
+            delete target[key];
+        }
+    });
+
+    return targetObject;
 }
 
 module.exports = {
