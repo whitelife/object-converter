@@ -19,5 +19,7 @@
     "url": "https://github.com/whitelife/object-converter/issues"
   },
   "homepage": "https://github.com/whitelife/object-converter#readme",
-  "dependencies": {}
+  "dependencies": {
+    "clone": "^2.0.0"
+  }
 }
