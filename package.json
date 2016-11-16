@@ -1,6 +1,6 @@
 {
   "name": "object-converter",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "javascript object converter",
   "main": "index.js",
   "scripts": {
