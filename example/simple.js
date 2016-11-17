@@ -35,9 +35,9 @@ const data = [
     }
 ]
 
-console.log(require('util').inspect(new Converter(data).select(`
+console.log(require('util').inspect(Converter.select(`
     first,
     number.first,
     number.second,
     english.c.d.e.f.g
-`), false, null));
+`, data), false, null));

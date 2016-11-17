@@ -49,32 +49,29 @@ const data = [
 //[ { first: 1,
 //    number: [ { first: 1, second: 2 }, { first: 1, second: 2 } ],
 //    english: { a: null, c: [ { d: { e: { f: { g: null } } } } ] } } ]
-console.log(require('util').inspect(new Converter(data).select(`
+console.log(require('util').inspect(Converter.select(`
     first,
     number.first,
     number.second,
-    english.a,
-    english.c
-`), false, null));
+    english.c.d.e.f.g
+`, data), false, null));
 ```
 
 # API
 
-## new Converter(data).select(field)
+## Converter.select(field, data)
 
-object, array support
-
-- data: origin object
 - field: selection
+- data: origin object (array supported)
 
 ```javascript
 // [ { first: 1,
 //    number: [ { first: 1, second: 2 }, { first: 1, second: 2 } ],
 //    english: { c: [ { d: { e: { f: { g: null } } } } ] } } ]
-new Converter(data).select(`
-    first, // 1 dept
-    number.first, // 2 dept
-    number.second, // 2 dept
-    english.c.d.e.f.g // 6 dept ~ n dept
-`), false, null)
+Converter.select(`
+    first,
+    number.first,
+    number.second,
+    english.c.d.e.f.g
+`, data);
 ```
