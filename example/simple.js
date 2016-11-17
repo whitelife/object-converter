@@ -41,3 +41,10 @@ console.log(require('util').inspect(Converter.select(`
     number.second,
     english.c.d.e.f.g
 `, data), false, null));
+
+console.log(require('util').inspect(Converter.alias(`
+    first as one,
+    number.first as one,
+    number.second as two,
+    english.c.d.e.f.g as won
+`, data), false, null));
