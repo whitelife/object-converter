@@ -61,7 +61,7 @@ console.log(require('util').inspect(Converter.select(`
 
 ## Converter.select(field, data)
 
-- field: selection
+- field: selection (ex: [key])
 - data: origin object (array supported)
 
 ```javascript
@@ -73,5 +73,21 @@ Converter.select(`
     number.first,
     number.second,
     english.c.d.e.f.g
+`, data);
+```
+
+## Converter.alias(field, data)
+
+- field: alias (ex: [key] as [alias key])
+- data: origin object (array supported)
+
+```javascript
+// [ { number: [ { one: 1, two: 2 }, { one: 1, two: 2 } ],
+//    english: { c: [ { d: { e: { f: { won: null } } } } ] } } ]
+Converter.alias(`
+    first as one,
+    number.first as one,
+    number.second as two,
+    english.c.d.e.f.g as won
 `, data);
 ```
