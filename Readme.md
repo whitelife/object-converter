@@ -9,7 +9,7 @@ Javascript object converter library
 npm install object-converter
 ```
 
-## Quick Example
+## Sample Data
 
 ```javascript
 const Converter = require('object-converter').Converter;
@@ -45,16 +45,6 @@ const data = [
         }
     }
 ]
-
-//[ { first: 1,
-//    number: [ { first: 1, second: 2 }, { first: 1, second: 2 } ],
-//    english: { a: null, c: [ { d: { e: { f: { g: null } } } } ] } } ]
-console.log(require('util').inspect(Converter.select(`
-    first,
-    number.first,
-    number.second,
-    english.c.d.e.f.g
-`, data), false, null));
 ```
 
 # API
@@ -90,4 +80,25 @@ Converter.alias(`
     number.second as two,
     english.c.d.e.f.g as won
 `, data);
+```
+
+## Converter.getObjectKeys(data)
+
+- data: origin object (array supported)
+
+```javascript
+// [ 'first',
+//   'second',
+//   'number',
+//   'number.first',
+//   'number.second',
+//   'english',
+//   'english.a',
+//   'english.b',
+//   'english.c',
+//   'english.c.d',
+//   'english.c.d.e',
+//   'english.c.d.e.f',
+//   'english.c.d.e.f.g' ]
+Converter.getObjectKeys(data);
 ```
