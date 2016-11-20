@@ -11,7 +11,12 @@
     "url": "git+https://github.com/whitelife/object-converter.git"
   },
   "keywords": [
-    "converter"
+    "convert",
+    "converter",
+    "object",
+    "array",
+    "keys",
+    "json"
   ],
   "author": "whitelife < parkmc_0@naver.com >",
   "license": "MIT",
