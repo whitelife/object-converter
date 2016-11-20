@@ -33,12 +33,6 @@ const data = [
             ]
         }
     }
-];
+]
 
-process.stdout.write(require('util').inspect(Converter.select(`
-    first,
-    number,
-    number.first,
-    number.second,
-    english.c.d.e.f.g
-`, data), false, null));
+console.log(require('util').inspect(Converter.getObjectKeys(data), false, null));
