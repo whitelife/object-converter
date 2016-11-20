@@ -26,5 +26,8 @@
   "homepage": "https://github.com/whitelife/object-converter#readme",
   "dependencies": {
     "clone": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2"
   }
 }

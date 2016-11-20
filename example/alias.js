@@ -33,9 +33,9 @@ const data = [
             ]
         }
     }
-]
+];
 
-console.log(require('util').inspect(Converter.alias(`
+process.stdout.write(require('util').inspect(Converter.alias(`
     first as one,
     number.first as one,
     number.second as two,
