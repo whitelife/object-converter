@@ -82,6 +82,20 @@ Converter.alias(`
 `, data);
 ```
 
+## Converter.update(field, value, data)
+
+- field: update field
+- value: update value
+- data: origin object (array supported)
+
+```javascript
+// [ { first: 1,
+//  second: 2,
+//  number: [ { first: 1, second: 2 }, { first: 1, second: 2 } ],
+//  english: { a: null, b: undefined, c: 3 } } ]
+Converter.update('english.c', 3, data);
+```
+
 ## Converter.getObjectKeys(data)
 
 - data: origin object (array supported)
@@ -102,3 +116,4 @@ Converter.alias(`
 //   'english.c.d.e.f.g' ]
 Converter.getObjectKeys(data);
 ```
+
