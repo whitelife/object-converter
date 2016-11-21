@@ -117,3 +117,31 @@ Converter.update('english.c', 3, data);
 Converter.getObjectKeys(data);
 ```
 
+## Converter.getObjectValue(field, data)
+
+- field: selection (ex: [key])
+- data: origin object (array unsupported)
+
+```javascript
+// {
+//     english: {
+//         a: null,
+//         b: undefined,
+//         c: {
+//             d: {
+//                 e: {
+//                     f: {
+//                         g: null
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// { d: { e: { f: { g: null } } } }
+Converter.getObjectValue('english.c', data);
+// { e: { f: { g: null } } }
+Converter.getObjectValue('english.c.d', data);
+// { f: { g: null } }
+Converter.getObjectValue('english.c.d.e', data);
+```

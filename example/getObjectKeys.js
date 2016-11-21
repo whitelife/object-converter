@@ -35,4 +35,4 @@ const data = [
     }
 ]
 
-console.log(require('util').inspect(Converter.getObjectKeys(data), false, null));
+process.stdout.write(require('util').inspect(Converter.getObjectKeys(data), false, null));

@@ -20,7 +20,7 @@ const data = [
         english: {
             a: null,
             b: undefined,
-            c: [
+            c:
                 {
                     d: {
                         e: {
@@ -30,7 +30,7 @@ const data = [
                         }
                     }
                 }
-            ]
+
         }
     }
 ];
